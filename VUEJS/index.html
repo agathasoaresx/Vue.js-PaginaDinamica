@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo Vue.js</title>
+    <script src="./vue.js"></script>
+    <style>  
+        .games {
+            height: 440px;
+            width: 865px;
+            background-color: #024959;
+            margin-left: 500px;
+            margin-top: 200px;
+                        
+        }
+        .game {
+            height: 200px;
+            width: 200px;
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: #026773;
+            position: relative;     
+        }
+        .game img {
+            width: 190px;
+            height: 190px;
+            position: absolute;
+            margin-left: 5px;
+            margin-top: 5px;
+            
+
+        }
+        .nomeAtual{
+            background-color: #026773;
+            width: 440px;
+            height: 40px;
+            margin-left: 180px;
+            margin-top: 50px;
+            
+        }
+        .nomeAtual h1 {
+            font-size: 24px;
+            padding-top: 8px;
+            padding-left: 30px;
+            color: #F2E3D5 ;
+            
+        }
+        body { 
+            background-color: #012E40;
+        }
+        
+
+        </style>
+</head>
+<body>
+
+    <!-- Com base no conteúdo ministrado até o momento, ou seja, data, methods e diretivas v-bind e v-on, crie uma página, com o design que você quiser, com pelo menos três aplicações distintas para cada diretiva.-->
+
+    <div id="app">
+            <div class="games" >
+
+                <div class="game" :class="cor" v-on:click="mostrarNome('Among Us')" @click="mudarCor('vermelho')" >
+                    
+                    <img v-bind:src="Game1" alt="">
+                </div>
+                <div class="game"  v-on:click="mostrarNome('Fall Guys')">
+                   
+                    <img v-bind:src="Game2" alt="">
+                </div>
+                <div class="game" v-on:click="mostrarNome('Apex Legends')" >
+                 
+                    <img v-bind:src="Game3" alt="">
+                </div>
+                <div class="game" v-on:click="mostrarNome('Free Fire')">
+                   
+                    <img v-bind:src="Game4" alt="">
+                </div>
+                <div class="game" v-on:click="mostrarNome('Fortnite')">
+                    <img v-bind:src="Game5" alt="">
+                </div>
+                <div class="game" v-on:click="mostrarNome('Angry Birds')">
+                    <img v-bind:src="Game6" alt="">
+                </div>
+                <div class="game" v-on:click="mostrarNome('League of Legends')">
+                    <img v-bind:src="Game7" alt="">
+                </div>
+                <div class="game" v-on:click="mostrarNome('Monkey Mart')" >
+                    <img v-bind:src="Game8" alt="">
+                </div>
+                <div class="nomeAtual">
+                    <h1> Jogo selecionado: {{ nome }} </h1>
+                </div>
+            </div>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                Game1: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/a8/30/22/a83022f4-322d-8f1d-05bb-0260672903c9/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.png',
+                Game2: 'https://ybz4mf0rwymr.cdn.shift8web.com/wp-content/uploads/2021/10/Game_10579.jpg',
+                Game3: 'https://is3-ssl.mzstatic.com/image/thumb/Purple126/v4/51/0e/81/510e8180-e980-6e1c-3d31-3a533f5dceab/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/256x256bb.png',
+                Game4: 'https://cdn.medal.tv/asset/games/garena-free-fire-max-m/cover-1623716551140.jpg',
+                Game5: 'https://4.bp.blogspot.com/-cg7RbXp55Us/WxcFYXQpTcI/AAAAAAAAMk4/-EhJzLvIykYDkO9NvIvXNmkqG9dpM2C3gCEwYBhgL/s1600/De84FOVVQAASVSV%2B%25281%2529.jpg',
+                Game6: 'https://is3-ssl.mzstatic.com/image/thumb/Purple116/v4/c0/73/f5/c073f5a8-6d34-2387-8e59-e4417b02ed1c/AppIcon-1x_U007emarketing-0-7-0-85-220.png/256x256bb.png',
+                Game7: 'https://www.zapgrupos.com/grupos/thumb/imgZapGrupos_0701181107580.jpg',
+                Game8: 'https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/b3668d7deb043d0f43b5813b0365be8f.png',
+                nome: ""
+                
+
+
+            },
+            methods: {
+                mostrarNome: function (message) {
+                    this.nome = message     
+                },
+            }
+               
+        });
+        console.log(vm);
+    </script>
+    
+</body>
+</html>

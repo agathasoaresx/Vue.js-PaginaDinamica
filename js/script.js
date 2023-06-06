@@ -4,7 +4,7 @@ const vm = new Vue ({
         inputTipoPao: '',
         inputSalada: [],
         inputMolho: [],
-        inputHamburguer: ''
+        inputHamburguer: '',
     },
     computed: {
         pao() {
